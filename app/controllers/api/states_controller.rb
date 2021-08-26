@@ -5,5 +5,8 @@ class Api::StatesController < ApplicationController
     render 'index.json.jb'
   end
 
-
+  def show
+    @state = State.find_by(state: params[:id])
+    render 'show.json.jb'
+  end
 end
